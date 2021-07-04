@@ -3,7 +3,7 @@ pipeline {
 
     stages {
         
-        stage('Build') {
+        stage('Executing_database') {
             steps {
                 sh 'sudo docker run --name demo -e MYSQL_ROOT_PASSWORD=demo -d mysql:latest'
                 }
@@ -15,7 +15,7 @@ pipeline {
                 }
             }
  
-        stage('Staging') {
+        stage('Deploy') {
             steps {
                 sh 'docker-compose up -d'
             }
