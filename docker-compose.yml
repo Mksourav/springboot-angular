@@ -3,6 +3,7 @@ services:
     user-mysql:
         image: mysql:latest
         environment:
+            - MYSQL_ROOT_PASSWORD=1234
             - MYSQL_DATABASE=springangular
             - MYSQL_USER=demo
             - MYSQL_PASSWORD=demo
