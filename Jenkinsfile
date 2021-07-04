@@ -5,7 +5,7 @@ pipeline {
         
         stage('Build') {
             steps {
-                sudo docker-compose build --no-cache
+                sh 'docker-compose build --no-cache'
                 }
             }
  
