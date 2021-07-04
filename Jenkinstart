@@ -5,6 +5,12 @@ pipeline {
         
         stage('Build') {
             steps {
+                sh 'sudo docker run --name demo -e MYSQL_ROOT_PASSWORD=demo -d mysql:latest'
+                }
+            }
+        
+        stage('Build') {
+            steps {
                 sh 'docker-compose build --no-cache'
                 }
             }
