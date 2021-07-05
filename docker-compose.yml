@@ -16,8 +16,8 @@ services:
         expose:
             # Opens port 3306 on the container
             - '3306'
-            
         container_name: mysql    
+        
     user-service:
         build: ./server-user-management
         entrypoint: /wait-for-it.sh mysql:3306 -- java -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=container -jar app.jar
@@ -25,7 +25,10 @@ services:
             - user-mysql:mysql
         ports:
             - 8080:8080  
+        container_name: server
+        
     course-client:
         build: ./client-user-management
         ports:
-            - 4200:80            
+            - 4200:80 
+        container_name: client
