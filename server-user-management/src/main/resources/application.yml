@@ -1,7 +1,7 @@
 spring:
   profiles: container
   datasource:
-    url: jdbc:mysql://mysql:3306/springangular?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false?autoReconnect=true&failOverReadOnly=false&maxReconnects=10
+    url: jdbc:mysql://localhost:3306/springangular?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false?autoReconnect=true&failOverReadOnly=false&maxReconnects=10
     username: demo
     password: demo
     initialize: true
