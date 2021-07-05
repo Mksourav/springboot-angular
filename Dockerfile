@@ -1,4 +1,4 @@
-FROM mysql:5.7
+FROM mysql:latest
 
 # Installing Crontab
 RUN apt-get update && apt-get -y install -qq --force-yes cron
