@@ -1,7 +1,9 @@
-pipeline {
+pipeline 
+{
     agent any
 
-    stages {
+    stages 
+    {
              
         stage('Build') {
             steps {
@@ -11,20 +13,9 @@ pipeline {
  
         stage('Deployclone') {
             steps {
-                sh 'docker-compose up'                
-            }
-        }
-        
-        stage('Executing_database') {
-            steps {
-                sh 'docker run --name demo -e MYSQL_ROOT_PASSWORD=demo -d mysql:latest'
+                sh 'docker-compose up -d'                
                 }
             }
             
-         stage('Deploy') {
-            steps {
-                sh 'docker-compose up'
-            }
-        }
     }
 }
