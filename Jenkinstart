@@ -16,7 +16,7 @@ pipeline {
 
                 try {
                   stage('checkout') {
-                    ...
+                   
                     if (your condition) {
                       autoCancelled = true
                       return
