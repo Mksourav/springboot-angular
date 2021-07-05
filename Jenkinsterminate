@@ -5,7 +5,9 @@ pipeline {
          
         stage('Staging') {
             steps {
-                sh 'docker-compose down'
+                sh 'docker container kill $(docker ps)'    
+                sh 'docker rm $(docker ps -a)'
+                sh 'docker rmi $(docker image ls)'
             }
         }
         
