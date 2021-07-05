@@ -5,7 +5,7 @@ pipeline {
     
          stage('stop docker-container') {
             steps {
-                sh 'docker-compose down'    
+                sh 'docker container rm $(docker container ls -aq) -f'    
             }
         }
     
