@@ -17,7 +17,7 @@ pipeline {
                 try {
                   stage('checkout') {
                    
-                    if (your condition) {
+                    if ('[32mspringbootangularprojectstart_user-service_1 exited with code 1') {
                       autoCancelled = true
                       return
                     }
