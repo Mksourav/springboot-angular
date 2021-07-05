@@ -5,8 +5,8 @@ pipeline {
          
         stage('Staging') {
             steps {
-                sh 'docker container kill $(docker ps)'    
-                sh 'docker rm $(docker ps -a)'
+                sh 'docker stop $(docker ps -a -q)'    
+                sh 'docker rm $(docker ps -a -q)'
                 sh 'docker rmi $(docker image ls)'
             }
         }
