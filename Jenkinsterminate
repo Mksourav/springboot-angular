@@ -2,7 +2,15 @@ pipeline {
     agent any
 
     stages {
-         
+    
+         stage('stop docker-container') {
+            steps {
+                sh 'docker-compose down'    
+            }
+        }
+    
+    
+        /* 
         stage('stop docker-container') {
             steps {
                 sh 'docker stop $(docker ps)'    
@@ -14,12 +22,13 @@ pipeline {
                 sh 'docker rm $(docker ps -a -q)'
             }
         }
-        
+        */
          stage('remove docker-image') {
             steps {
                 sh 'docker rmi $(docker image ls)'
             }
         }
+        
         
     }
 }
