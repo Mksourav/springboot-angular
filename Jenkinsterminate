@@ -10,19 +10,6 @@ pipeline {
         }
     
     
-        /* 
-        stage('stop docker-container') {
-            steps {
-                sh 'docker stop $(docker ps)'    
-            }
-        }
-        
-         stage('remove docker-container') {
-            steps {
-                sh 'docker rm $(docker ps -a -q)'
-            }
-        }
-        */
          stage('remove docker-image') {
             steps {
                 sh 'docker rmi $(docker image ls)'
