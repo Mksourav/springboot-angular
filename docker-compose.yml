@@ -1,14 +1,22 @@
 version: '3.0'
 services:
     user-mysql:
+    
         image: mysql:latest
+        restart: always
         environment:
-            - MYSQL_ROOT_PASSWORD=1234
-            - MYSQL_DATABASE=springangular
-            - MYSQL_USER=demo
-            - MYSQL_PASSWORD=demo
+            MYSQL_DATABASE: 'springangular'
+            MYSQL_USER: 'demo'
+            # You can use whatever password you like
+            MYSQL_PASSWORD: 'demo'
+            # Password for root access
+            MYSQL_ROOT_PASSWORD: 'password'
         ports:
-            - 3306:3306
+            - '3306:3306'
+        expose:
+            # Opens port 3306 on the container
+            - '3306'
+            
         container_name: mysql    
     user-service:
         build: ./server-user-management
