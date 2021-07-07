@@ -9,4 +9,5 @@ COPY ./wait-for-it.sh /wait-for-it.sh
 RUN chmod +x /wait-for-it.sh
 COPY --from=builder /app/gradle/src/build/libs/server-user-management-0.0.1.jar app.jar
 RUN bash -c 'touch /app.jar'
+EXPOSE 8080
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=container","-jar","/app.jar"]
